@@ -1,0 +1,120 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.scroll-container {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  width: 100%;
+}
+.section {
+  scroll-snap-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  font-family: "Cinzel Decorative", cursive;
+  color: #fff;
+  .content {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        line-height: 20px;
+        padding: 0 10px;
+        font-size: 24pt;
+        border-left: #fff solid 1px;
+      }
+
+      li:nth-child(1) {
+        border-left: none;
+      }
+    }
+    hr {
+      color: #fff;
+      margin: 25px 0;
+    }
+  }
+}
+#section-1 {
+  background-image: url("../img/sec1-bg.jpg");
+
+  .content {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+    h1 {
+      font-size: 292pt;
+      line-height: 233pt;
+    }
+    h3 {
+      text-align: center;
+      font-size: 48pt;
+    }
+  }
+}
+#section-2 {
+  background-image: url("../img/sec2-bg.jpg");
+  .content {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 25px 20px;
+    .descr-wrapper {
+      display: flex;
+      width: 100%;
+    }
+    .descr {
+      max-width: 500px;
+      text-align: right;
+    }
+    ul {
+      border-top: #fff solid 1px;
+      padding-top: 20px;
+      flex: 1;
+    }
+    h1 {
+      font-size: 120pt;
+      line-height: 135pt;
+    }
+    h3 {
+      text-align: right;
+      font-size: 48pt;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 18pt;
+      line-height: 21pt;
+    }
+  }
+}
+#section-3 {
+  background-image: url("../img/sec3-bg.jpg");
+}
+#section-4 {
+  background-image: url("../img/sec4-bg.jpg");
+}
+#section-5 {
+  background-image: url("../img/sec5-bg.jpg");
+}
+#section-6 {
+  background-image: url("../img/sec6-bg.jpg");
+}
+#section-7 {
+  background-image: url("../img/about-bg.jpg");
+}
