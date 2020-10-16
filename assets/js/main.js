@@ -14,3 +14,7 @@ class Links extends HTMLElement {
     }
 }
 customElements.define('main-links', Links);
+function openDescr(id) {
+    const index = id.charAt(id.length - 1) - 1;
+    document.querySelectorAll('.section').item(index).classList.add('full-descr');
+}

@@ -20,6 +20,23 @@ a {
   scroll-snap-type: y mandatory;
   width: 100%;
 }
+.full-descr {
+  .content {
+    width: 100% !important;
+    align-items: center !important;
+    .descr-wrapper {
+      flex-direction: column;
+      align-items: center;
+      h3 {
+        text-align: center !important;
+      }
+      .descr {
+        text-align: center !important;
+        max-width: 800px !important;
+      }
+    }
+  }
+}
 .section {
   scroll-snap-align: center;
   background-size: cover;
@@ -82,6 +99,15 @@ a {
     .descr {
       max-width: 500px;
       text-align: right;
+      transition: all 0.5s ease-in-out;
+      padding: 15px 15px 15px 0;
+      border-radius: 25px;
+      &:hover {
+        cursor: pointer;
+
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translateX(-15px);
+      }
     }
     ul {
       border-top: #fff solid 1px;
@@ -100,7 +126,17 @@ a {
     p {
       font-size: 18pt;
       line-height: 21pt;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+  }
+  & .default {
+  .content {
+    
+  }
   }
 }
 #section-3 {
