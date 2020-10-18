@@ -12,6 +12,64 @@ a {
   color: #fff;
   text-decoration: none;
 }
+.scroller {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  ul {
+    list-style: circle;
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+
+    li {
+      font-size: 27px;
+      cursor: pointer;
+      &.active {
+        list-style: disc;
+      }
+    }
+  }
+}
+.close-btn {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  top: 5%;
+  right: 5%;
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: scale(0.8);
+  }
+}
+.fixed-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#overlay {
+  display: block;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  transition: all 1s ease-in-out;
+}
 .scroll-container {
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -22,18 +80,35 @@ a {
 }
 .full-descr {
   .content {
+    z-index: 2;
+    position: relative;
     width: 100% !important;
     align-items: center !important;
     .descr-wrapper {
       flex-direction: column;
       align-items: center;
+      width: auto !important;
       h3 {
         text-align: center !important;
       }
       .descr {
-        text-align: center !important;
+        text-align: left !important;
+
         max-width: 800px !important;
+        margin-top: 20px;
+        &:hover {
+          cursor: text !important;
+          background-color: transparent !important;
+          transform: none !important;
+        }
       }
+      .descr-text {
+        display: block !important;
+        line-height: 1.4em !important;
+      }
+    }
+    .map {
+      display: block!important;
     }
   }
 }
@@ -45,6 +120,7 @@ a {
   min-height: 100vh;
   font-family: "Cinzel Decorative", cursive;
   color: #fff;
+  transition: all 1s ease-in-out;
   .content {
     ul {
       display: flex;
@@ -97,14 +173,13 @@ a {
       width: 100%;
     }
     .descr {
-      max-width: 500px;
+      max-width: 450px;
       text-align: right;
       transition: all 0.5s ease-in-out;
       padding: 15px 15px 15px 0;
       border-radius: 25px;
       &:hover {
         cursor: pointer;
-
         background-color: rgba(0, 0, 0, 0.5);
         transform: translateX(-15px);
       }
@@ -123,7 +198,7 @@ a {
       font-size: 48pt;
       margin-bottom: 15px;
     }
-    p {
+    .descr-text {
       font-size: 18pt;
       line-height: 21pt;
       display: -webkit-box;
@@ -132,11 +207,12 @@ a {
       overflow: hidden;
       text-overflow: ellipsis;
     }
-  }
-  & .default {
-  .content {
-    
-  }
+    .map {
+      display: none;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 15px;
+    }
   }
 }
 #section-3 {

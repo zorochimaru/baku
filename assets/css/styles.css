@@ -16,6 +16,85 @@ a {
   text-decoration: none;
 }
 
+.scroller {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+}
+
+.scroller ul {
+  list-style: circle;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #fff;
+}
+
+.scroller ul li {
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.scroller ul li.active {
+  list-style: disc;
+}
+
+.close-btn {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  top: 5%;
+  right: 5%;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.close-btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.close-btn:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.fixed-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#overlay {
+  display: block;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
 .scroll-container {
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -27,6 +106,8 @@ a {
 }
 
 .full-descr .content {
+  z-index: 2;
+  position: relative;
   width: 100% !important;
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
@@ -41,6 +122,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: auto !important;
 }
 
 .full-descr .content .descr-wrapper h3 {
@@ -48,8 +130,25 @@ a {
 }
 
 .full-descr .content .descr-wrapper .descr {
-  text-align: center !important;
+  text-align: left !important;
   max-width: 800px !important;
+  margin-top: 20px;
+}
+
+.full-descr .content .descr-wrapper .descr:hover {
+  cursor: text !important;
+  background-color: transparent !important;
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+
+.full-descr .content .descr-wrapper .descr-text {
+  display: block !important;
+  line-height: 1.4em !important;
+}
+
+.full-descr .content .map {
+  display: block !important;
 }
 
 .section {
@@ -60,6 +159,8 @@ a {
   min-height: 100vh;
   font-family: "Cinzel Decorative", cursive;
   color: #fff;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .section .content ul {
@@ -141,7 +242,7 @@ a {
 }
 
 #section-2 .content .descr {
-  max-width: 500px;
+  max-width: 450px;
   text-align: right;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -175,7 +276,7 @@ a {
   margin-bottom: 15px;
 }
 
-#section-2 .content p {
+#section-2 .content .descr-text {
   font-size: 18pt;
   line-height: 21pt;
   display: -webkit-box;
@@ -183,6 +284,13 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#section-2 .content .map {
+  display: none;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 15px;
 }
 
 #section-3 {
